@@ -1,0 +1,46 @@
+# Automatic
+ 
+Bootstrap: docker
+From: ubuntu:18.04
+ 
+%post
+	apt-get update
+	apt-get install -y tzdata
+	apt-get install -y time
+	apt-get install -y wget
+	apt-get install -y git
+	apt-get install -y build-essential
+	apt-get install -y apt-utils
+	apt-get install -y make
+	apt-get install -y cmake
+	apt-get install -y gcc
+	apt-get install -y libgfortran3
+	apt-get install -y gfortran
+	apt-get install -y sysstat
+	apt-get install -y libibnetdisc-dev
+	apt-get install -y openmpi-bin
+	apt-get install -y libopenmpi-dev
+	apt-get install -y libhdf5-openmpi-dev
+	apt-get install -y python
+	apt-get install -y python-pip
+	apt-get install -y python-tk
+
+	# python configure
+	pip install mpi4py
+	pip install numpy
+	pip install scipy
+	pip install matplotlib
+	
+	# pyranda build
+	git clone https://github.com/LLNL/pyranda
+	cd pyranda
+	python setup.py install
+
+
+
+
+
+
+
+
+
