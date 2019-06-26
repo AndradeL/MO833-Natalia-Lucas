@@ -16,7 +16,7 @@ obs: o download desses arquivos está incluso na execução do script
 3. A chamada do script deve ser feita seguida de 4 argumentos, sendo eles:
 * número de processos MPI
 * número de threads OpenMP
-* ids das gpus utilizadas (obs: os ids tem base zero)
+* IDs das GPUs utilizadas (obs: os IDs tem base zero)
 * número de passos
 
 ## PYRANDA
