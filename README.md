@@ -4,8 +4,14 @@ Repositório para compartilhamento de arquivos de trabalho da disciplina MO833 d
 ## GROMACS
 1. A execução da aplicação GROMACS é feita pela execução do script gromacs.sh e pode ser feita utilizando o container _singularity_ gromacs.sif com o comando:
 ```bash
-singularity exec gromacs.sif sh gromacs.sh
+singularity exec gromacs.sif sh gromacs.sh ntmpi ntomp gpu-ids nsteps
 ```
+onde:
+* ntmpi: número de processos MPI
+* ntomp: número de threads OpenMP
+* gpu-ids: IDs das GPUs utilizadas (ex: gpu-id = 01 corresponde ao utilizar as GPUs com IDs 0 e 1)
+* nsteps: número de passos da simulação
+
 2. Os dados de entrada da aplicação estão disponíveis on-line e podem ser baixados através dos links abaixo:
 * https://files.rcsb.org/download/1AKI.pdb
 * http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp
@@ -16,11 +22,7 @@ singularity exec gromacs.sif sh gromacs.sh
 
 *Obs*: o download desses arquivos está incluso na execução do script
 
-3. A chamada do script deve ser feita seguida de 4 argumentos, sendo eles:
-* número de processos MPI
-* número de threads OpenMP
-* IDs das GPUs utilizadas (obs: os IDs tem base zero)
-* número de passos
+
 
 ## PYRANDA
 
